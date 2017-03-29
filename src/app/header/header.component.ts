@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private log: LoggerService) { }
 
   ngOnInit() {
-
+  this.log.log('HeaderComponent initialized');
 $('.nav a').on('click', function(){
-  console.log("Hi")
-    $('.navbar-toggle').click(); 
+    $('.navbar-toggle').click();
 });
   }
 
