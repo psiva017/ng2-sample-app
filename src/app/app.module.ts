@@ -25,6 +25,9 @@ const appRoutes: Routes = [
   },{
      path: 'users',
     component: SignupComponent
+  },{
+     path: '',
+    component: SignupComponent
   }
 
 ];

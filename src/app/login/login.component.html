@@ -1,12 +1,12 @@
 <div class=" center">
     Please login to access ToDo App.
 </div>
-<form action="">
-    <div class="imgcontainer small-img signup-form">
-        <img src="./assets/img/login.jpg" alt="Avatar" class="avatar">
-    </div>
 
+<form action="">
     <div class="container signup-form ">
+        <div>
+            <!--<i class="fa fa-5x fa-user-circle" aria-hidden="true"></i>-->
+        </div>
         <label><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="uname" required>
 
@@ -15,10 +15,12 @@
 
         <button type="submit">Login</button>
         <input type="checkbox" checked="checked"> Remember me
+        <div class="container signup-form">
+            <!--<button type="button" class="cancelbtn" [routerLink]="['/signup']">Signup</button>-->
+            <span class="psw-left"> <a [routerLink]="['/signup']">Signup</a></span>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
     </div>
 
-    <div class="container signup-form" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn" [routerLink]="['/signup']">Signup</button>
-        <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
+
 </form>

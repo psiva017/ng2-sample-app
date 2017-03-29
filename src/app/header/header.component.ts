@@ -10,6 +10,11 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+$('.nav a').on('click', function(){
+  console.log("Hi")
+    $('.navbar-toggle').click(); 
+});
   }
 
 }
