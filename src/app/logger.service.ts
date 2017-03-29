@@ -6,15 +6,15 @@ export class LoggerService {
   constructor() { }
 
   log(msg: any) {
-console.log(msg);
+    console.log(msg);
   };
 
   error(msg: any) {
-console.error(msg);
+    console.error(msg);
   };
 
-   warn(msg: any) {
-console.warn(msg);
+  warn(msg: any) {
+    console.warn(msg);
   };
 
 }
