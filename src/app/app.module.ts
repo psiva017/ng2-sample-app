@@ -13,23 +13,24 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { LoggerService } from './logger.service';
 import * as $ from 'jquery';
+import { UserListComponent } from './user-list/user-list.component';
 
 const appRoutes: Routes = [
 
   {
     path: 'dashboard',
     component: DashboardComponent
-  },{
+  }, {
     path: 'login',
     component: LoginComponent
-  },{
+  }, {
     path: 'signup',
     component: SignupComponent
-  },{
-     path: 'users',
-    component: SignupComponent
-  },{
-     path: '',
+  }, {
+    path: 'users',
+    component: UserListComponent
+  }, {
+    path: '',
     component: SignupComponent
   }
 
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     FooterComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,

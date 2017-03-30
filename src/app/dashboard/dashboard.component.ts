@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent  {
 
-loading:boolean = true;
+loading = true;
 
   constructor() {
     setTimeout(() => {

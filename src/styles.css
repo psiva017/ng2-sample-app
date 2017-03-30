@@ -17,6 +17,11 @@
     animation: spin 2s linear infinite;
 }
 
+.center-loader {
+    margin: 20% auto;
+    float: none;
+}
+
 @-webkit-keyframes spin {
     0% {
         -webkit-transform: rotate(0deg);
