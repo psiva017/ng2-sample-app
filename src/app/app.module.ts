@@ -12,6 +12,7 @@ import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { LoggerService } from './logger.service';
+import { CommonService } from './common.service';
 import * as $ from 'jquery';
 import { UserListComponent } from './user-list/user-list.component';
 
@@ -52,7 +53,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [LoggerService],
+  providers: [LoggerService,CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
