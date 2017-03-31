@@ -10,11 +10,13 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 import { LoggerService } from './logger.service';
-import { CommonService } from './common.service';
+import { AppSetting } from './app-setting.service';
 import * as $ from 'jquery';
-import { UserListComponent } from './user-list/user-list.component';
+import { CustomCasePipe } from './custom-case.pipe';
+
 
 const appRoutes: Routes = [
 
@@ -45,7 +47,8 @@ const appRoutes: Routes = [
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-    UserListComponent
+    UserListComponent,
+    CustomCasePipe
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [LoggerService,CommonService],
+  // -------- Common services ( vaild for whole application ) ------
+  providers: [LoggerService, AppSetting],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

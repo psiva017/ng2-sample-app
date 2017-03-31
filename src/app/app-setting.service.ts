@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class AppSettingService {
+export class AppSetting {
 
-public static API_ENDPOINT='http://localhost:8080';
+  public static API_ENDPOINT = 'http://localhost:8080';
 
   constructor() { }
 

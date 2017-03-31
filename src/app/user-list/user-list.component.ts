@@ -1,41 +1,41 @@
 import { Component } from '@angular/core';
-import { UserService,UserDetailService } from '../user.service';
+import { UserService, UserDetailService } from '../user.service';
 import { User } from '../user';
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css'],
-  providers:[UserService,UserDetailService]
+  providers: [UserService, UserDetailService]
 })
-export class UserListComponent  {
-loading = true;
-users: User[];
-obj:any;
-errorMessage: String;
+export class UserListComponent {
+  loading = true;
+  users: User[];
+  obj: any;
+  errorMessage: String;
 
 
-  constructor(private userService: UserService,private userDetailService: UserDetailService) {
+  constructor(private userService: UserService, private userDetailService: UserDetailService) {
     setTimeout(() => {
       this.loading = false;
     }, 1000);
     this.getusers();
-    
+
     // --- Test Call ------
     this.testCall()
   }
 
- getusers() {
+  getusers() {
     this.userService.testCall()
-                     .subscribe(
-                       users => this.users = users,
-                       error =>  this.errorMessage = <any>error);
+      .subscribe(
+      users => this.users = users,
+      error => this.errorMessage = <any>error);
   }
 
 
-// ------ Test Call -----------
-  testCall(){
-      console.log("this.obj");
-    this.userService.testCall().subscribe(obj =>console.log(obj)
+  // ------ Test Call -----------
+  testCall() {
+    console.log("this.obj");
+    this.userService.testCall().subscribe(obj => console.log(obj)
     );
   }
 }

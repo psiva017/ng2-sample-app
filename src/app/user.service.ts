@@ -5,29 +5,30 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 import { User } from './user';
+import { AppSetting } from './app-setting.service';
 
 @Injectable()
 export class UserService {
-  constructor (private http: Http) {}
+  constructor(private http: Http) { }
 
-getUsers() {
-    return this.http.get('localhost:8080/users')
-                    .map((res:Response ) => res.json());            
+  getUsers() {
+    return this.http.get(AppSetting.API_ENDPOINT + '/users')
+      .map((res: Response) => res.json());
   }
 
-  getUserById(id:number) {
-    return this.http.get('localhost:8080/user?id='+id)
-                    .map((res:Response ) => res.json());            
+  getUserById(id: number) {
+    return this.http.get(AppSetting.API_ENDPOINT + '/user?id=' + id)
+      .map((res: Response) => res.json());
   }
 
-  getUserByCompany(cName:String) {
-    return this.http.get('localhost:8080/user?cName='+cName)
-                    .map((res:Response ) => res.json());            
+  getUserByCompany(cName: String) {
+    return this.http.get(AppSetting.API_ENDPOINT + '/user?cName=' + cName)
+      .map((res: Response) => res.json());
   }
 
   testCall() {
     return this.http.get('./app/user.json')
-                    .map((res:Response ) => res.json());                            
+      .map((res: Response) => res.json());
   }
 }
 
@@ -35,25 +36,25 @@ getUsers() {
 
 @Injectable()
 export class UserDetailService {
-  constructor (private http: Http) {}
+  constructor(private http: Http) { }
 
-getUserDetailById(id:number): Observable<User[]> {
-    return this.http.get('localhost:8080/userdetails?id='+id).map(this.extractData) .catch(this.handleError);               
+  getUserDetailById(id: number): Observable<User[]> {
+    return this.http.get(AppSetting.API_ENDPOINT + '/userdetails?id=' + id).map(this.extractData).catch(this.handleError);
   }
 
 
   testDetailsCall() {
     return this.http.get('./app/user.json')
-                    .map((res:Response ) => res.json());                            
+      .map((res: Response) => res.json());
   }
-// ------------------ Service Methods [STARTS]----------------
-   private extractData(res: Response) {
-    const body: any = res.json();    
-    return body.data || { };
+  // ------------------ Service Methods [STARTS]----------------
+  private extractData(res: Response) {
+    const body: any = res.json();
+    return body.data || {};
   }
 
 
-   private handleError (error: Response | any) {
+  private handleError(error: Response | any) {
     let errMsg: string;
     if (error instanceof Response) {
       const body = error.json() || '';

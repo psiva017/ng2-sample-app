@@ -1,21 +1,21 @@
 [{
-"name": "Siva",
-  "email": "siva@yopmail.com",
-  "password": "pass123$"
-},{
-"name": "Siva 2",
-  "email": "Siva2@yopmail.com",
-  "password": "pass1234$"
-},{
-"name": "Siva 3",
-  "email": "Siva3@yopmail.com",
-  "password": "pass12345$"
-},{
-"name": "Siva 4",
-  "email": "siva4@yopmail.com",
-  "password": "pass123456$"
-},{
-"name": "Siva 5",
-  "email": "siva5@yopmail.com",
-  "password": "pass1234567$"
+    "name": "Siva",
+    "email": "siva@yopmail.com",
+    "password": "pass123$"
+}, {
+    "name": "Siva 2",
+    "email": "Siva2@yopmail.com",
+    "password": "pass1234$"
+}, {
+    "name": "Siva 3",
+    "email": "Siva3@yopmail.com",
+    "password": "pass12345$"
+}, {
+    "name": "Siva 4",
+    "email": "siva4@yopmail.com",
+    "password": "pass123456$"
+}, {
+    "name": "Siva 5",
+    "email": "siva5@yopmail.com",
+    "password": "pass1234567$"
 }]

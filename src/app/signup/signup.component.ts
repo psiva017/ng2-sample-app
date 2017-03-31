@@ -12,12 +12,12 @@ export class SignupComponent implements OnInit, OnDestroy {
   constructor(private router: Router, private log: LoggerService) { }
 
   ngOnInit() {
-     this.log.log('SignupComponent initialized');
+    this.log.log('SignupComponent initialized');
   }
- doSignup() {
-  this.router.navigate(['/dashboard']);
-}
-ngOnDestroy() {
- this.log.log('SignupComponent Destroyed');
-}
+  doSignup() {
+    this.router.navigate(['/dashboard']);
+  }
+  ngOnDestroy() {
+    this.log.log('SignupComponent Destroyed');
+  }
 }
