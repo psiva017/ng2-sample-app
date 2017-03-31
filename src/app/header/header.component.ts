@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.log.log('HeaderComponent initialized');
-    $('.nav a').on('click', function(){
+    $('.nav a').on('click', function () {
       $('.navbar-toggle').click();
     });
   }
