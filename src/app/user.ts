@@ -1,5 +1,6 @@
 export class User {
-    private name: String;
-    private email: String;
-    private password: String;
+    public name: String;
+    public email: String;
+    public password: String;
+    public contact: String;
 }

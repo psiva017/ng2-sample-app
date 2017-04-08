@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -11,11 +11,13 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { UserAddComponent } from './user-add/user-add.component';
 
 import { LoggerService } from './logger.service';
 import { AppSetting } from './app-setting.service';
 import * as $ from 'jquery';
 import { CustomCasePipe } from './custom-case.pipe';
+import { AdminUserAddComponent } from './admin-user-add/admin-user-add.component';
 
 
 const appRoutes: Routes = [
@@ -33,6 +35,12 @@ const appRoutes: Routes = [
     path: 'users',
     component: UserListComponent
   }, {
+    path: 'user-add',
+    component: UserAddComponent
+  }, {
+    path: 'admin-user-add',
+    component: AdminUserAddComponent
+  }, {
     path: '',
     component: SignupComponent
   }
@@ -48,11 +56,14 @@ const appRoutes: Routes = [
     SignupComponent,
     DashboardComponent,
     UserListComponent,
-    CustomCasePipe
+    UserAddComponent,
+    CustomCasePipe,
+    AdminUserAddComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
