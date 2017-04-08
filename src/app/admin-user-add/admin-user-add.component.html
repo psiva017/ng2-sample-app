@@ -1,0 +1,46 @@
+<div *ngIf="loading" id="loader" class="loader center-loader"></div>
+<div *ngIf="!loading" class="container">
+    <div class="row center-block">
+        <div class="col-md-5 col-md-offset-3 col-sm-offset-2  col-lg-5">
+            <div class="panel panel-default">
+                <div class="panel-heading center">
+
+                    <h2> <i><span class="fa fa-user"></span></i> Add new admin user</h2>
+                </div>
+
+                <div class="panel-body">
+                    <!--This form is a reactive driven form -->
+                    <form (ngSubmit)="addAdminuser(user)" [formGroup]='user'>
+                        <div class="form-group">
+                            <label for="name">Full name:</label>
+                            <input type="text" class="form-control" formControlName='name' placeholder="Enter full name">
+                        </div>
+                        <div formGroupName="emails">
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" formControlName='email' placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="communicationEmail">Communication Email:</label>
+                                <input type="email" class="form-control" formControlName='communicationEmail' placeholder="Enter Communication email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mobile">Contact no:</label>
+                            <input type="text" class="form-control" formControlName='mobile' placeholder="Enter contact no">
+                            <span *ngIf="user.get('mobile').hasError('pattern') && user.get('mobile').touched" class="msg-error">Mobile should have only numbers </span>
+                            <span *ngIf="(user.get('mobile').hasError('minlength')|| user.get('mobile').hasError('maxlength')) && user.get('mobile').touched" class="msg-error">Mobile should have 10 numbers </span>
+                        </div>
+                        <div class="  text-center">
+                            <button id="singlebutton" type="submit" [disabled]='user.invalid' name="submit" class="btn btn-space btn-success">Invite</button>
+                            <button id="singlebutton" name="reset" type="reset" class="btn btn-space btn-danger">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-footer">Want to add an employee. Click <a [routerLink]="['/user-add ']">here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
