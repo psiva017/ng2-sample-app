@@ -8,7 +8,7 @@
                     <h2> <i><span class="fa fa-user-circle"></span></i> Add new user</h2>
                 </div>
 
-                <div class="panel-body">
+                <div class="panel-body" (contextmenu)='disableRC($event)'>
                     <!--This form is a template driven form -->
                     <form (ngSubmit)="addNewuser(f)" #f="ngForm">
                         <div class="form-group">
@@ -20,11 +20,11 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" ngModel name="email`" id="email" placeholder="Enter email">
+                            <input type="email" class="form-control" ngModel name="email" id="email" placeholder="Enter email">
                         </div>
                         <div class="form-group">
                             <label for="mobile">Contact no:</label>
-                            <input type="text" class="form-control" ngModel id="mobile" name="mobile" placeholder="Enter contact no">
+                            <input type="text" class="form-control" [textMask]="{mask: mask}" onlyNumber ngModel id="mobile" name="mobile" placeholder="Enter contact no">
                         </div>
                         <div class="form-group">
                             <label for="pwd">Password:</label>
