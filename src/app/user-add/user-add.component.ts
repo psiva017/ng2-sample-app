@@ -8,10 +8,15 @@ import { User } from '../user';
 export class UserAddComponent implements OnInit {
 
     user: User;
+    public mask = [ /[1-9]/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+
   constructor() { }
 
   ngOnInit() {
 this.user = new User();
+  }
+  disableRC(e){
+    return false;
   }
 
 addNewuser(newUserForm){

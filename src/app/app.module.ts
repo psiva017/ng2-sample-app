@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { TextMaskModule } from 'angular2-text-mask';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,6 +20,9 @@ import { AppSetting } from './app-setting.service';
 import * as $ from 'jquery';
 import { CustomCasePipe } from './custom-case.pipe';
 import { AdminUserAddComponent } from './admin-user-add/admin-user-add.component';
+import { InputOutputExamlpeComponent } from './input-output-examlpe/input-output-examlpe.component';
+import { AllowNumbersDirective } from './allow-numbers.directive';
+import { MobileMaskPipe } from './mobile-mask.pipe';
 
 
 const appRoutes: Routes = [
@@ -58,14 +63,19 @@ const appRoutes: Routes = [
     UserListComponent,
     UserAddComponent,
     CustomCasePipe,
-    AdminUserAddComponent
+    AdminUserAddComponent,
+    InputOutputExamlpeComponent,
+    AllowNumbersDirective,
+    MobileMaskPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    TextMaskModule
+    
   ],
   // -------- Common services ( vaild for whole application ) ------
   providers: [LoggerService, AppSetting],
